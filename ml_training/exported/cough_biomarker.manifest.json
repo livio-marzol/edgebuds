@@ -1,0 +1,21 @@
+{
+  "model_name": "edgebuds_acoustic_biomarker_v1",
+  "input_shape": [
+    "batch_size",
+    1,
+    128,
+    "time_frames"
+  ],
+  "output_classes": [
+    "saudavel",
+    "tosse_seca",
+    "tosse_produtiva"
+  ],
+  "head_architecture": [
+    "GlobalAveragePooling2D",
+    "Dense(256, ReLU)",
+    "Dropout(0.4)",
+    "Dense(3, Softmax)"
+  ],
+  "edge_sanity_check_threshold_rms": 0.025
+}
